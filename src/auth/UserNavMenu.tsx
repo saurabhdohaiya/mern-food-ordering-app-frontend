@@ -24,14 +24,20 @@ function UserNavMenu() {
                             User Profile
                         </Link>
                     </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Link to="/manage-restaurant" className="hover:text-orange-500">
+                            Manage Restaurant
+                        </Link>
+                    </DropdownMenuItem>
                    <Separator/>
                     <DropdownMenuItem>
-                        <p
-                            className="hover:text-orange-500 hover:cursor-pointer"
+
+                        <div
+                            className="flex justify-center items-center w-full rounded-md p-2 bg-orange-500 text-white hover:text-orange-500 hover:bg-white hover:cursor-pointer hover:border-2 hover:border-orange-500"
                             onClick={()=> logout()}
                         >
                             Log Out
-                        </p>
+                        </div>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
