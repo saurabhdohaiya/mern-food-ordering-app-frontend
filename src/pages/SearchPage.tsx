@@ -102,8 +102,8 @@ function SearchPage() {
                         onChange={(value) => setSortOption(value)}
                     />
                 </div>
-                {results.data.map((restaurant: Restaurant, index: number) => (
-                    <SearchResultCard restaurant={restaurant} index={index}/>
+                {results.data.map((restaurant: Restaurant) => (
+                    <SearchResultCard restaurant={restaurant}/>
                 ))}
                 <PaginationSelector
                     page={results.pagination.page}

@@ -5,10 +5,9 @@ import {Banknote, Clock, Dot} from "lucide-react";
 
 type Props = {
     restaurant: Restaurant;
-    index: number;
 };
 
-const SearchResultCard = ({restaurant, index}: Props) => {
+const SearchResultCard = ({restaurant}: Props) => {
     return (
         <Link
             to={`/detail/${restaurant._id}`}
