@@ -125,8 +125,6 @@ function ManageRestaurantForm({isLoading, onSave, restaurant} : Props) {
             formData.append(`imageFile`, formDataJson.imageFile);
         }
 
-        console.log("FOrm Data: ", formData);
-
         onSave(formData);
     }
 

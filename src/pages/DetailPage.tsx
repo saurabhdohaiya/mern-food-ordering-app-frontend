@@ -132,6 +132,7 @@ function DetailPage() {
         if(!data.url){
             toast.error("No checkout data.");
         }
+        sessionStorage.removeItem(`cartItems-${restaurantId}`);
         window.location.href = data.url;
     };
 

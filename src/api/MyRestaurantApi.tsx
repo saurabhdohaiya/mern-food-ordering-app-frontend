@@ -10,7 +10,6 @@ export const useGetMyRestaurant = () => {
 
     const getMyRestaurantRequest = async (): Promise<Restaurant> => {
         const accessToken = await getAccessTokenSilently();
-        console.log(accessToken);
         const response = await fetch(`${API_BASE_URL}/api/my/restaurant`, {
             method: "GET",
             headers: {

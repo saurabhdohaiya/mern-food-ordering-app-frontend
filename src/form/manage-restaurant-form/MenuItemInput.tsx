@@ -11,9 +11,6 @@ type Props = {
 const MenuItemInput = ({index, removeMenuItem}: Props) => {
     const {control} = useFormContext();
 
-    const showFormData = () => {
-        console.log("menu Item Data: ", control);
-    }
     return(
         <div className="flex flex-row items-end gap-2">
             <FormField
@@ -55,15 +52,6 @@ const MenuItemInput = ({index, removeMenuItem}: Props) => {
             >
                 Remove
             </Button>
-
-            <Button
-                type="button"
-                onClick={showFormData}
-                className={"bg-red-500 max-h-fit"}
-            >
-                Test Button
-            </Button>
-
         </div>
     )
 };
