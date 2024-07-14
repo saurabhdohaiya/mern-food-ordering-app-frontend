@@ -1,7 +1,7 @@
 import {useFormContext} from "react-hook-form";
 import {FormControl, FormDescription, FormField, FormItem, FormMessage} from "@/components/ui/form.tsx";
 import {Input} from "@/components/ui/input.tsx";
-import {AspectRatio} from "@radix-ui/react-aspect-ratio";
+import {AspectRatio} from "@/components/ui/aspect-ratio";
 
 function ImageSection() {
     const {control, watch} = useFormContext();

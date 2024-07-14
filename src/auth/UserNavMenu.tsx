@@ -29,6 +29,11 @@ function UserNavMenu() {
                             Manage Restaurant
                         </Link>
                     </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Link to="/order-status" className="hover:text-orange-500">
+                            Manage Order
+                        </Link>
+                    </DropdownMenuItem>
                    <Separator/>
                     <DropdownMenuItem>
 
