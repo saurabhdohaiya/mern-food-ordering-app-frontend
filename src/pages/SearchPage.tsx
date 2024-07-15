@@ -74,7 +74,7 @@ function SearchPage() {
         return (<LoadingContainer/>);
     }
 
-    if(!results?.data || !city){
+    if(results?.data.length !== 0 || !city){
         return <ErrorMessageContainer errorMessage={"Error 404: No Result Found :("}/>
     }
 

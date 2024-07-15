@@ -37,7 +37,6 @@ export const useGetMyOrders = () => {
 };
 
 
-
 type CheckoutSessionRequest = {
     cartItems: {
         menuItemId: string;
@@ -52,6 +51,7 @@ type CheckoutSessionRequest = {
     };
     restaurantId: string;
 };
+
 
 export const useCreateCheckoutSession = () => {
     const { getAccessTokenSilently } = useAuth0();
