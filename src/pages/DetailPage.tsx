@@ -11,6 +11,8 @@ import {toast} from "sonner";
 import CheckoutButton from "@/components/CheckoutButton.tsx";
 import {UserFormData} from "@/form/user-profile-form/UserProfileForm.tsx";
 import {useCreateCheckoutSession} from "@/api/OrderApi.tsx";
+import LoadingContainer from "@/components/LoadingContainer.tsx";
+import ErrorMessageContainer from "@/components/ErrorMessageContainer.tsx";
 
 export type CartItem = {
     _id: string;
@@ -31,7 +33,7 @@ function DetailPage() {
     });
 
     if (isLoading || !restaurant) {
-        return "Loading...";
+        return <LoadingContainer/>
     }
 
     const addToCart = (menuItem: MenuItemType) =>{
@@ -104,8 +106,9 @@ function DetailPage() {
     };
 
     const onCheckout = async (useFormData: UserFormData) => {
-        if(!restaurant)
-            return
+        if(!restaurant){
+            return <ErrorMessageContainer errorMessage={"Error 404: No Restaurant Found :("}/>
+        }
 
         const checkoutData = {
             cartItems: cartItems.map((cartItem) => ({

@@ -8,6 +8,8 @@ import SearchBar, {SearchForm} from "@/components/SearchBar.tsx";
 import PaginationSelector from "@/components/PaginationSelector.tsx";
 import CuisineFilter from "@/components/CuisineFilter.tsx";
 import SortOptionDropdown from "@/components/SortOptionDropdown.tsx";
+import LoadingContainer from "@/components/LoadingContainer.tsx";
+import ErrorMessageContainer from "@/components/ErrorMessageContainer.tsx";
 
 export type SearchState = {
     searchQuery: string;
@@ -69,11 +71,11 @@ function SearchPage() {
     };
 
     if (isLoading) {
-        return <span>Loading ...</span>;
+        return (<LoadingContainer/>);
     }
 
     if(!results?.data || !city){
-        return <div>No result found</div>;
+        return <ErrorMessageContainer errorMessage={"Error 404: No Result Found :("}/>
     }
 
     return (

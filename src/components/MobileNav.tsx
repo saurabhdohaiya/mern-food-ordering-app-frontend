@@ -20,7 +20,7 @@ const MobileNav = () => {
                                 <CircleUserRound className="hover:text-orange-500"/>
                             </div>
                         ):(
-                            <p>Welcome to MernEats</p>
+                            <p>Welcome to Zesty :)</p>
                         )}
                     </SheetTitle>
                     <div className="border my-4"></div>

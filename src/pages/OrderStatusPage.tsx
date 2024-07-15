@@ -2,16 +2,18 @@ import { useGetMyOrders } from "@/api/OrderApi";
 import OrderStatusDetail from "@/components/OrderStatusDetail";
 import OrderStatusHeader from "@/components/OrderStatusHeader";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import LoadingContainer from "@/components/LoadingContainer";
+import ErrorMessageContainer from "@/components/ErrorMessageContainer.tsx";
 
 const OrderStatusPage = () => {
     const { orders, isLoading } = useGetMyOrders();
 
     if (isLoading) {
-        return "Loading...";
+        return <LoadingContainer/>;
     }
 
     if (!orders || orders.length === 0) {
-        return "No orders found";
+        return <ErrorMessageContainer errorMessage={"Error 404: No orders found :("}/>;
     }
 
     return (

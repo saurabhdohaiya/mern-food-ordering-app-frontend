@@ -32,8 +32,8 @@ function HomePage() {
                     <div className="text-3xl font-bold tracking-tight text-orange-600">
                         Order takeaway even faster!
                     </div>
-                    <div className="flex">
-                        <p>Download the MernEats app for faster takeaway</p>
+                    <div className="flex text-sm">
+                        <p>Download the Zesty:) app for faster takeaway</p>
                     </div>
                     <img src={appDownloadImage} alt="appDownloadlandImg"/>
                 </div>

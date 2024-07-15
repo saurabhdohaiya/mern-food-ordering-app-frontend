@@ -7,7 +7,6 @@ import {
 import {CircleUserRound} from "lucide-react";
 import {useAuth0} from "@auth0/auth0-react";
 import {Link} from "react-router-dom";
-import {Separator} from "@/components/ui/separator.tsx";
 
 function UserNavMenu() {
     const {user, logout} = useAuth0();
@@ -16,7 +15,7 @@ function UserNavMenu() {
             <DropdownMenu>
                 <DropdownMenuTrigger className="flex items-center px-3 gap-2">
                     {user?.email}
-                    <CircleUserRound className="hover:text-orange-500"/>
+                    <CircleUserRound className="hover:text-orange-500" size={20}/>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                     <DropdownMenuItem>
@@ -34,9 +33,8 @@ function UserNavMenu() {
                             Manage Order
                         </Link>
                     </DropdownMenuItem>
-                   <Separator/>
+                    <div className={"border-b border-orange-500 my-1"}></div>
                     <DropdownMenuItem>
-
                         <div
                             className="flex justify-center items-center w-full rounded-md p-2 bg-orange-500 text-white hover:text-orange-500 hover:bg-white hover:cursor-pointer hover:border-2 hover:border-orange-500"
                             onClick={()=> logout()}
