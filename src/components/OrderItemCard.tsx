@@ -46,7 +46,7 @@ const OrderItemCard = ({ order }: Props) => {
     };
 
     return (
-        <Card>
+        <Card className={"!text-sm"}>
             <CardHeader>
                 <CardTitle className="grid md:grid-cols-4 gap-4 justify-between mb-3">
                     <div>
@@ -68,7 +68,7 @@ const OrderItemCard = ({ order }: Props) => {
                     <div>
                         Total Cost:
                         <span className="ml-2 font-normal">
-              £{(order.totalAmount / 100).toFixed(2)}
+              Rs{(order.totalAmount)}
             </span>
                     </div>
                 </CardTitle>
@@ -78,11 +78,11 @@ const OrderItemCard = ({ order }: Props) => {
                 <div className="flex flex-col gap-2">
                     {order.cartItems.map((cartItem) => (
                         <span>
-              <Badge variant="outline" className="mr-2">
-                {cartItem.quantity}
-              </Badge>
+                          <Badge variant="outline" className="mr-2">
+                            {cartItem.quantity}
+                          </Badge>
                             {cartItem.name}
-            </span>
+                        </span>
                     ))}
                 </div>
                 <div className="flex flex-col space-y-1.5">
