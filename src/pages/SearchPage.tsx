@@ -74,8 +74,12 @@ function SearchPage() {
         return (<LoadingContainer/>);
     }
 
-    if(results?.data.length !== 0 || !city){
+    if(!results?.data || !city){
         return <ErrorMessageContainer errorMessage={"Error 404: No Result Found :("}/>
+    }
+
+    if(results?.data.length !== 0){
+        return <ErrorMessageContainer errorMessage={`Error 404: No Registered Restaurant found in ${city}. Try Different City :(`}/>
     }
 
     return (
