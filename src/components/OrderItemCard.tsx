@@ -52,14 +52,14 @@ const OrderItemCard = ({ order }: Props) => {
                     <div>
                         Customer Name:
                         <span className="ml-2 font-normal">
-              {order.deliveryDetails.name}
-            </span>
+                            {order.deliveryDetails.name}
+                        </span>
                     </div>
                     <div>
                         Delivery address:
                         <span className="ml-2 font-normal">
-              {order.deliveryDetails.addressLine1}, {order.deliveryDetails.city}
-            </span>
+                            {order.deliveryDetails.addressLine1}, {order.deliveryDetails.city}
+                        </span>
                     </div>
                     <div>
                         Time:
@@ -68,8 +68,8 @@ const OrderItemCard = ({ order }: Props) => {
                     <div>
                         Total Cost:
                         <span className="ml-2 font-normal">
-              Rs{(order.totalAmount)}
-            </span>
+                            Rs{(Number(order.totalAmount)/100)}
+                        </span>
                     </div>
                 </CardTitle>
                 <Separator />

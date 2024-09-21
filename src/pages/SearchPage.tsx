@@ -78,7 +78,7 @@ function SearchPage() {
         return <ErrorMessageContainer errorMessage={"Error 404: No Result Found :("}/>
     }
 
-    if(results?.data.length !== 0){
+    if(results?.data.length === 0){
         return <ErrorMessageContainer errorMessage={`Error 404: No Registered Restaurant found in ${city}. Try Different City :(`}/>
     }
 

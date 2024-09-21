@@ -11,7 +11,7 @@ function MobileNavLink() {
                     to="/user-profile">
                     User Profile
                 </Link>
-                <p  onClick={()=> logout}
+                <p onClick={()=> logout()}
                     className={"flex flex-1 hover:text-orange-500 hover:cursor-pointer"}>
                     Log Out
                 </p>

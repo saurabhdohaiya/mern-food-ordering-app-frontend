@@ -5,7 +5,8 @@ import {useAuth0} from "@auth0/auth0-react";
 import MobileNavLink from "@/components/MobileNavLink.tsx";
 
 const MobileNav = () => {
-    const {user, isAuthenticated} = useAuth0();
+    const {user, loginWithRedirect, isAuthenticated} = useAuth0();
+
     return (
         <>
             <Sheet>
@@ -28,7 +29,7 @@ const MobileNav = () => {
                         {isAuthenticated ?
                             (<MobileNavLink/>)
                             : (
-                                <Button className="flex-1 font-bold bg-orange-500">Log In</Button>
+                                <Button className="flex-1 font-bold bg-orange-500" onClick={async () => await loginWithRedirect()}>Log In</Button>
                             )}
                     </SheetDescription>
                 </SheetContent>

@@ -2,6 +2,7 @@ import landingImage from "../assets/images/landing.png";
 import appDownloadImage from "../assets/images/appDownload.png";
 import SearchBar, {SearchForm} from "@/components/SearchBar.tsx";
 import {useNavigate} from "react-router-dom";
+import { Top_Searched_Cities } from "@/config/top-searched-cities";
 
 function HomePage() {
     const navigate = useNavigate();
@@ -11,6 +12,12 @@ function HomePage() {
             pathname: `/search/${searchFormValues.searchQuery}`,
         });
     };
+
+    const handleTopSearchCitySubmit = (city: string) => {
+        navigate({ 
+            pathname: `/search/${city}`,
+        });
+    }
 
     return (
         <div className="flex flex-col gap-12">
@@ -25,6 +32,13 @@ function HomePage() {
                     placeHolder="Search by City or Town"
                     onSubmit={handleSearchSubmit}
                 />
+                <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 items-center justify-between md:justify-start gap-1 md:gap-2">
+                    {Top_Searched_Cities.map((city)=> {
+                        return <span className="border rounded-full py-1 px-2 hover:bg-orange-600 hover:text-white hover:border-orange-600 hover:animate-in hover:font-bold hover:cursor-pointer" onClick={()=>handleTopSearchCitySubmit(city.name)}>
+                            {city.title}
+                        </span>
+                    })}
+                </div>
             </div>
             <div className="grid md:grid-cols-2 gap-5">
                 <img src={landingImage} alt="landingImg"/>
